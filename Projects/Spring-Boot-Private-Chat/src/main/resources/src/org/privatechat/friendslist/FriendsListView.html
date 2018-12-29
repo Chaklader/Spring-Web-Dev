@@ -1,0 +1,12 @@
+<navbar></navbar>
+
+<div class="panel panel-default friendslist">
+  <div class="panel-heading">
+    <h3 class="panel-title">Friends List</h3>
+  </div>
+  <div class="panel-body">
+    <div class="list-group" ng-repeat="(key, value) in users">
+      <a href="#/private-chat/{{value.id}}" class="list-group-item">{{value.fullName}}</a>
+    </div>
+  </div>
+</div>

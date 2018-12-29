@@ -1,0 +1,42 @@
+Details
+
+Hello Freelancers
+
+We need an experienced full-stack developer (Spring, web sockets, Angular.js 4, Swagger.io, PostgreSQL), to develop a new E-Commerce solution from scratch.
+
+It will be a Realtime Auction/Online Shop, we expect more than 15.000 Visitors a day with many real-time auctions and products.
+
+You need to have much experience in how to build such heavy visited and interacted Web application.
+
+You can read all req. specification, some user stories and use cases in our attached PDF. In our PDF you can read something about Milestone 1. This Milestone 1 is a test Task for you, after we did some bad experience we will test each potential Freelancer. 
+
+We will pay you by milestones.
+
+We look forward to receiving your proposals. 
+
+What we need
+-----------------
+We need a experienced full stack developer who can develop Java Spring and Angular 4.
+!!! We need a estimate for entire project!!! If you need some more information’s to give us a complete estimate so ask us.
+
+We need a time estimate.
+
+What we are not looking for
+-----------------
+Agents
+
+Attachment
+
+ Specification EN 2.0 docx.pdf (795 KB)
+Project Stage: Fully Specified
+Ongoing project: Own System from Scratch
+Project Type: Ongoing project
+Software Frameworks that will be used: Spring Framework
+Programming Languages Required: AngularJS 
+Other Skills: Java EE OAuth PostgreSQL Programming Socket Programming
+You will be asked to answer the following questions when submitting a proposal:
+Do you have any questions about the job description?
+What challenging part of this job are you most experienced in?
+What questions do you have about the project?
+Which of the required job skills do you feel you are strongest at?
+Which part of this project do you think will take the most time?

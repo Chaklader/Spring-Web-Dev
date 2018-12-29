@@ -1,0 +1,23 @@
+<form class="register" name="register" ng-submit="attemptRegistration()" novalidate>
+  <div class="form-group" ng-class="{'has-error': register.email.$invalid && !register.email.$pristine }">
+    <label>Email</label>
+    <input type="email" name="email" class="form-control" ng-model="email" required>
+    <p ng-show="register.email.$invalid && !register.email.$pristine" class="help-block">valid Email required.</p>
+  </div>
+  <div class="form-group" ng-class="{'has-error': register.name.$invalid && !register.name.$pristine }">
+    <label>Name</label>
+    <input type="text" name="name" class="form-control" ng-model="fullName" ng-minlength="2" ng-maxlength="50" required>
+    <p ng-show="register.fullName.$error.required && !register.name.$pristine" class="help-block">valid name required.</p>
+    <p ng-show="register.fullName.$error.minlength && !register.name.$pristine" class="help-block">name is too short.</p>
+    <p ng-show="register.fullName.$error.maxlength && !register.name.$pristine" class="help-block">name is too long.</p>
+  </div>
+  <div class="form-group" ng-class="{'has-error': register.password.$invalid && !register.password.$pristine }">
+    <label>Password</label>
+    <input type="password" name="password" class="form-control" ng-model="password" ng-minlength="6" ng-maxlength="50" required>
+    <p ng-show="register.password.$error.required && !register.password.$pristine" class="help-block">valid password required.</p>
+    <p ng-show="register.password.$error.minlength && !register.password.$pristine" class="help-block">password is too short.</p>
+    <p ng-show="register.password.$error.maxlength && !register.password.$pristine" class="help-block">password is too long.</p>
+  </div>
+
+  <button type="submit" class="btn btn-lg btn-primary btn-block" ng-disabled="register.$invalid">Submit</button>
+</form>

@@ -1,0 +1,65 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="${@environment.getProperty('template.admin.name.base')}">
+
+<span layout:fragment="title" th:remove="tag">Content Management</span>
+
+<h1 layout:fragment="main-title">Content Management</h1>
+
+<div layout:fragment="main-content">
+<div class="row-fluid">
+    <div class="span12">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>New Content</h5>
+        </div>
+        <div class="widget-content nopadding">
+          <form  method="POST" th:action="@{/admin/content/store}"  th:object="${entityForm}" class="form-horizontal" enctype="multipart/form-data" > 
+            
+            <div class="control-group">
+            
+              <label class="control-label">Title :</label>
+              <div class="controls">
+              	<input type="text" class="span11" th:field="*{title}" />
+              	<p class="field-error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
+              </div>
+            </div>
+            <div class="control-group">
+            
+              <label class="control-label">content :</label>
+              <div class="controls">
+           		<textarea  class=" textarea_editor span12" rows="6" placeholder="Enter text ..." th:field="*{content}"></textarea>
+              	<p class="field-error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">category</label>
+              <div class="controls">
+                <select th:field="*{category}">
+                	<option value="0">select category</option>
+					<span th:utext="${categorySelectOptions}"></span>
+				</select>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">File</label>
+              <div class="controls">
+                <input type="file" name="file" />
+              </div>
+            </div>
+            
+            
+            
+            <input type="hidden" 
+           th:name="${_csrf.parameterName}" 
+           th:value="${_csrf.token}" />
+            <div class="form-actions">
+              <button type="submit" class="btn btn-success" th:text="#{text.general.Create}"></button>
+              <a class="btn btn-info" th:href="@{/admin/category/index}" th:text="#{text.general.backToList}"></a>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+      </div>
+</div>
+</html>

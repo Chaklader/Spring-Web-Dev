@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/common.css}" rel="stylesheet"/>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+
+
+<body>
+
+<div class="container">
+
+<div th:if="${message != null}">
+<div th:text="${message}"></div>
+</div>
+    <table>
+    <thead>
+    <tr>
+    <th>radif</th>
+    <th>name</th>
+    <th>actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    	<tr th:each="entity, iter : ${page}">
+    		<td th:text="${iter.index+1}"></td>
+    	
+    		<td th:text="${entity.content}"></td>
+    		<td>
+    			<a class="active-btn" th:onclick="'post_func(\'activate\',\'' + ${entity.id} + '\');'" href="#" th:data-id="${entity.id}" th:if="${entity.status == 0}">activate</a>
+    			<a class="disable-btn" th:onclick="'post_func(\'disable\',\'' + ${entity.id} + '\');'" href="#" th:data-id="${entity.id}" th:if="${entity.status == 1}">disable</a>
+    		</td>
+    	</tr>
+    </tbody>
+    </table>
+
+</div>
+<!-- /container -->
+<form method="POST" action="" name="post_form" id="post_form"  role="form">
+    <input type="hidden" 
+           th:name="${_csrf.parameterName}" 
+           th:value="${_csrf.token}" />
+    <input type="hidden" id="post_form_status" name="status" value="" />
+</form>
+
+<script>
+function post_func(status, id){
+    var url = '<block th:remove="tag" th:utext="@{/admin/comment/changeStatus/}" ></block>';
+    $('#post_form_status').val(status);
+    var form = $('#post_form');
+    form.attr('action', url + id);
+	form.submit();
+
+}
+    
+$(document).ready(function($) {
+	
+	
+	
+	$(".active-btn").click(function(event) {
+
+		// Prevent the form from submitting via the browser.
+		event.preventDefault();
+		activatecomment();
+
+	});
+});
+
+
+function activatecomment() {
+	
+	var token = $("meta[name='_csrf']").attr("content");
+	var header = $("meta[name='_csrf_header']").attr("content");
+	var url = $("#commentSaveUrl").val();
+	var id=1;
+	var content= $("#comment-form .content").val();
+	
+	$.ajax({ 
+		
+		contentType : "application/json",
+		dataType : 'json',
+		timeout : 100000,
+		beforeSend: function(xhr) {
+            // here it is
+            xhr.setRequestHeader(header, token);
+        },
+        type: 'POST',
+        url: url,
+        data: {id: id, content: content}
+    })
+    .done(function (data) {
+        console.debug(data);
+        if (data.status == "success") {
+            alert("ha");
+          /*  $('#cartModalMsg').text( 'محصول ' + data.product['name'] + ' به سبد خرید اضافه شد.') ;
+            
+            // update top cart menu data
+            //updateTopcartData(data.topcart);
+            $(".cart-box").html(data.topcartContent)
+            // update cartitems num
+            $('.top-cart .cart-num').text(data.itemsNum);
+            
+           var modal = $('#cartModal');
+           modal.modal('show');
+            */
+           // $("#cartModalA").click();
+          //  $( "#cartModalA" ).trigger( "click" );
+           
+        }
+        else if (data.status == "failed") {
+            /*
+            if('msg' in data) {
+                $("#cartModalMsg").html(data.msg);
+            }
+            else {
+                $("#cartModalMsg").html('<div class="alert alert-warning">مشکلی در ثبت محصول بوجود آمد لطفا دوباره تلاش کنید.</div>');
+            }
+        
+            var modal = $('#cartModal');
+            modal.modal('show');
+            */
+        }
+    });
+}
+</script>
+
+</body>
+</html>

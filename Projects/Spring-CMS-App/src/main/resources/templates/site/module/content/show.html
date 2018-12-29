@@ -1,0 +1,187 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="${@environment.getProperty('template.site.name.base')}">
+
+<span layout:fragment="title" th:remove="tag" th:text="${content.title}">Category Management</span>
+
+<h1 layout:fragment="main-title" th:text="${content.title}">Category Management</h1>
+
+<div th:remove="tag" layout:fragment="main-content">
+
+
+<section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1 th:text="${content.title}">Blog Item</h1>
+                </div>
+                <div class="col-sm-6">
+                	<div th:include="site/flat-theme/fragment/breadcrumb :: breadcrumb"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </section><!--/#title-->
+
+    <section id="blog" class="container">
+        <div class="row">
+        
+        	<div th:include="site/module/content/segment/aside :: aside"></div>
+        	
+            <div class="col-sm-8 col-sm-pull-4">
+                <div class="blog">
+                    <div class="blog-item">
+                        <img class="img-responsive img-blog" th:if="${content.fileName != ''}" th:src="@{/file/module/content/{fileName}(fileName=${content.fileName})}"  width="100%" alt="" />
+                        <div class="blog-content">
+                            <h3 th:text="${content.title}"></h3>
+                            <div class="entry-meta">
+                                <span><i class="icon-folder-close"></i> <a th:href="@{${'/content/catList/{id}/{slug}'}(id=${content.category.id}, slug=${content.category.slug})}" th:text="${content.category.name}">Bootstrap</a></span>
+                                <span th:if="${content.createdAt != null}"><i class="icon-calendar" th:if="${content.createdAt != null}"></i> <span th:remove="tag"  th:text="${#dates.format(content.createdAt, 'dd MM yyyy')}"></span></span>
+                                <span><i class="icon-comment"></i> <a href="blog-item.html#comments"><span th:remove="tag" th:text="${content.comments.size()}"></span> Comments</a></span>
+                            </div>
+                            <div th:utext="${content.content}"></div>
+                            <hr/>
+
+							<!--  
+                            <div class="tags">
+                                <i class="icon-tags"></i> Tags <a class="btn btn-xs btn-primary" href="#">CSS3</a> <a class="btn btn-xs btn-primary" href="#">HTML5</a> <a class="btn btn-xs btn-primary" href="#">WordPress</a> <a class="btn btn-xs btn-primary" href="#">Joomla</a>
+                            </div>
+                            -->
+
+                            <p>&nbsp;</p>
+
+
+                            <div id="comments">
+
+                                <div id="comments-list">
+                                    <h3><span th:remove="tag" th:text="${content.comments.size()}"></span> Comments</h3>
+                                  
+                                    <div th:each="comment : ${content.comments}" class="media">
+                                        <div class="pull-left">
+                                            <img class="avatar img-circle" th:src="@{/site/flat-theme/images/blog/avatar2.png}" alt=""/>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="well">
+                                                <div class="media-heading">
+                                                    <small th:if="${comment.createdAt != null}" th:text="${#dates.format(comment.createdAt, 'dd MM yyyy')}">27 Aug 2013</small>
+                                                </div>
+                                                <p th:text="${comment.content}"></p>
+                                            </div>
+                                        </div>
+                                    </div><!--/.media-->
+                                </div><!--/#comments-list-->  
+
+                                <div id="comment-form">
+                                    <h3>Leave a comment</h3>
+                                    <form id="comment-form" class="form-horizontal" role="form">
+                                        <!-- 
+                                        <div class="form-group">
+                                            <div class="col-sm-6">
+                                                <input type="text" name="fullName" class="form-control" placeholder="Name"/>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="email" name="email" class="form-control" placeholder="Email"/>
+                                            </div>
+                                        </div>
+                                        -->
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <textarea rows="8" name="content" class="form-control content" placeholder="Comment"></textarea>
+                                            </div>
+                                        </div>
+                                       <input type="hidden" id="commentSaveUrl" th:value="@{/comment/save}" />
+                                       <input type="hidden" id="contentId" th:value="${content.id}" />
+                                        
+                                        <button type="submit" class="btn btn-danger btn-lg">Submit Comment</button>
+                                    </form>
+                                </div><!--/#comment-form-->
+                            </div><!--/#comments-->
+                        </div>
+                    </div><!--/.blog-item-->
+                </div>
+            </div><!--/.col-md-8-->
+        </div><!--/.row-->
+    </section><!--/#blog-->
+
+</div><!--/layout:fragment="main-content"-->
+
+
+
+<div layout:fragment="bottom-fragment">
+<script>
+$(document).ready(function($) {
+	
+	
+	
+	$("#comment-form").submit(function(event) {
+
+		// Prevent the form from submitting via the browser.
+		event.preventDefault();
+		test1();
+
+	});
+});
+
+function test1() {
+	
+	var token = $("meta[name='_csrf']").attr("content");
+	var header = $("meta[name='_csrf_header']").attr("content");
+	var url = $("#commentSaveUrl").val();
+	var id= $("#comment-form #contentId").val();
+	var content= $("#comment-form .content").val();
+	console.log("sent data: ", {id: id, content: content});
+	$.ajax({ 
+		
+		/*contentType : "application/json",*/
+		dataType : 'json',
+		timeout : 100000, 
+		beforeSend: function(xhr) {
+            // here it is
+            xhr.setRequestHeader(header, token);
+        },
+        type: 'POST',
+        url: url,
+        data: {id: id, content: content}
+        
+    })
+    .done(function (data) {
+        console.debug(data);
+        if (data.status == "success") {
+        	console.log("SUCCESS: ", data);
+            alert("ha");
+
+           
+        }
+        else if (data.status == "failed") {
+        }
+    });
+}
+
+/*
+function submitCommentjax() {
+	var data = {}
+	data["query"] = $("#query").val();
+
+	$.ajax({
+		type : "POST",
+		contentType : "application/json",
+		url : "${home}search/api/getSearchResult",
+		data : JSON.stringify(data),
+		dataType : 'json',
+		timeout : 100000,
+		success : function(data) {
+			console.log("SUCCESS: ", data);
+			display(data);
+		},
+		error : function(e) {
+			console.log("ERROR: ", e);
+			display(e);
+		},
+		done : function(e) {
+			console.log("DONE");
+		}
+	});
+}
+*/
+</script>
+</div>
+</html>
+

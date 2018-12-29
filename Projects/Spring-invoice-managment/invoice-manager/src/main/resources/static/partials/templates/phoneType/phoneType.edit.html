@@ -1,0 +1,17 @@
+<div ng-show="authority === 'ROLE_ADMIN'">
+	<h4>edit:</h4>
+	<form role="form" ng-submit="phoneTypeFormEdit()">
+		<div class="form-group">
+			<label for="name">Name:</label> <input type="text"
+				class="form-control" id="name" name="name"
+				ng-model="phoneTypeEdit.name" autofocus />
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+<div ng-show="!authenticated">
+	<p>Login to see this content</p>
+</div>
+<div ng-show="(authenticated && authority !== 'ROLE_ADMIN')">
+	<p>Access denied</p>
+</div>

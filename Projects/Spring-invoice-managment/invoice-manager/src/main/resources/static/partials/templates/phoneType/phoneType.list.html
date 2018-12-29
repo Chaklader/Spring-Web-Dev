@@ -1,0 +1,35 @@
+<div ng-show="authority === 'ROLE_ADMIN'">
+	<h4>list:</h4>
+
+	<div>
+		<!-- {{phoneTypeList._embedded.phoneType}} -->
+		<div ng-hide="!phoneTypeList._embedded.phoneType == ''">
+			<p>Phone type list is empty</p>
+		</div>
+		<table ng-show="phoneTypeList._embedded.phoneType.length > 0" class="table table-striped">
+			<thead>
+				<tr>
+					<td>Name</td>
+					<td></td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="type in phoneTypeList._embedded.phoneType track by type._links.self.href.split('/')[5]">
+					<td>{{type.name}}</td>
+					<td><a ui-sref="phoneType.edit({id:type._links.self.href.split('/')[5]})" class="btn btn-info" role="button">edit</a></td>
+					<td><a href=""
+						ng-click="deleteItem(type._links.self.href.split('/')[5])" class="btn btn-danger" role="button">delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</div>
+
+<div ng-show="!authenticated">
+	<p>Login to see this content</p>
+</div>
+<div ng-show="(authenticated && authority !== 'ROLE_ADMIN')">
+	<p>Access denied</p>
+</div>

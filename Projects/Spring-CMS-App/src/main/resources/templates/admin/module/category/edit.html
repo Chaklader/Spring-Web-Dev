@@ -1,0 +1,53 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="${@environment.getProperty('template.admin.name.base')}">
+
+<span layout:fragment="title" th:remove="tag">Category Management</span>
+
+<h1 layout:fragment="main-title">Category Management</h1>
+
+<div layout:fragment="main-content">
+<div class="row-fluid">
+    <div class="span12">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>Edit Category</h5>
+        </div>
+        <div class="widget-content nopadding">
+          <form  method="POST" th:action="@{/admin/category/update/{contentId}(contentId=${entityForm.id})}"  th:object="${entityForm}" class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label">Name :</label>
+              <div class="controls">
+              	<input type="text" class="span11" th:field="*{name}" />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Parent</label>
+              <div class="controls">
+                <select th:field="*{parentId}">
+                	<option value="">root</option>
+					<span th:utext="${selectOptions}"></span>
+				</select>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">For Module</label>
+              <div class="controls">
+                <select th:field="*{module}">
+					<option th:each="module : ${modules}"
+						th:value="${module.id}"
+						th:text="${module.title}">
+					</option>
+				</select>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-success" th:text="#{text.general.Update}">Update</button>
+               <a class="btn btn-info" th:href="@{/admin/category/index}" th:text="#{text.general.backToList}"></a>
+              
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+      </div>
+</div>
+</html>

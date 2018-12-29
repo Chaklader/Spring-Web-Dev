@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="invoice-manager">
+		<class>invoice.domain.Adress</class>
+		<class>invoice.domain.Bank</class>
+		<class>invoice.domain.Company</class>
+		<class>invoice.domain.Customer</class>
+		<class>invoice.domain.Employee</class>
+		<class>invoice.domain.Invoice</class>
+		<class>invoice.domain.Item</class>
+		<class>invoice.domain.ItemUnitOfMass</class>
+		<class>invoice.domain.PaymentType</class>
+		<class>invoice.domain.Phone</class>
+		<class>invoice.domain.PhoneType</class>
+		<class>invoice.domain.Role</class>
+		<class>invoice.domain.TaxRatio</class>
+	</persistence-unit>
+</persistence>

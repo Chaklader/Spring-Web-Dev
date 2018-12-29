@@ -1,0 +1,12 @@
+org/baeldung/client/marshall/IMarshaller.class
+org/baeldung/client/util/HeaderUtil$1.class
+org/baeldung/client/util/SearchUriBuilder$1.class
+org/baeldung/client/util/UriUtil.class
+org/baeldung/client/util/SearchUriBuilder.class
+org/baeldung/client/IDtoOperations.class
+org/baeldung/client/template/IReadOnlyTemplateWithUri.class
+org/baeldung/client/template/IRestClientWithUri.class
+org/baeldung/client/util/HeaderUtil$2.class
+org/baeldung/client/util/HeaderUtil.class
+org/baeldung/client/template/AbstractBaseClientRestTemplate.class
+org/baeldung/client/spring/CommonClientConfig.class

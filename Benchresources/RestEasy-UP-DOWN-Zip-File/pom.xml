@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>in.bench.resources</groupId>
+	<artifactId>RestEasy-UP-DOWN-Zip-File</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>RestEasy-UP-DOWN-Zip-File</name>
+	<description>an example on JAX-RS Restful web service to upload/download Zip files</description>
+
+	<repositories>
+		<repository>
+			<id>jboss</id>
+			<url>http://repository.jboss.org/maven2</url>
+		</repository>
+	</repositories>
+
+	<properties>
+		<resteasy.version>3.0.8.Final</resteasy.version>
+		<resteasy.scope>provided</resteasy.scope> <!-- compile(Tomcat) / provided(JBoss) -->
+		<compileSource>1.7</compileSource>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<finalName>RestEasy-UP-DOWN-Zip-File</finalName>
+	</build>
+
+	<dependencies>
+		<!-- RESTEasy JAX RS Implementation -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxrs</artifactId>
+			<version>${resteasy.version}</version>
+			<scope>${resteasy.scope}</scope>
+		</dependency>
+
+		<!-- Resteasy Multipart Provider -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-multipart-provider</artifactId>
+			<version>${resteasy.version}</version>
+			<scope>${resteasy.scope}</scope>
+		</dependency>
+
+		<!-- Resteasy Servlet Container Initializer -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-servlet-initializer</artifactId>
+			<version>${resteasy.version}</version>
+			<scope>${resteasy.scope}</scope>
+		</dependency>
+
+		<!-- RESTEasy JAX RS Client -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-client</artifactId>
+			<version>${resteasy.version}</version>
+			<scope>${resteasy.scope}</scope>
+		</dependency>
+	</dependencies>
+</project>

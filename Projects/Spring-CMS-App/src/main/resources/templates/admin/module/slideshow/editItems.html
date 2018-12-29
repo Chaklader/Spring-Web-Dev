@@ -1,0 +1,115 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="${@environment.getProperty('template.admin.name.base')}">
+
+<span layout:fragment="title" th:remove="tag">Slideshow Management</span>
+
+<h1 layout:fragment="main-title">Slideshow Management</h1>
+
+<div layout:fragment="main-content">
+<div class="row-fluid">
+    <div class="span12">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>Edit <span th:text="${entity.title}"></span></h5>
+        </div>
+        <div class="widget-content nopadding">
+          <form  method="POST" th:action="@{/admin/slideshow/updateItems/{contentId}(contentId=${entity.id})}"   class="form-horizontal" enctype="multipart/form-data" >
+            <div id="slides">
+	            <div class="odd gradeX slide" th:each="slideshowItem, iter : ${entity.slideshowItems}">
+	                  	<span onclick="delete_slide(this)" class="del-slide"><span class="icon"> <i class="icon-minus"></i></span> remove</span>
+	            
+		            <div class="control-group">
+		              <label class="control-label">Title :</label>
+		              <div class="controls">
+		              	<input type="hidden" name="itemIds" th:value="${slideshowItem.id}"/>
+		              	<input type="text" class="span11" name="itemTitles" th:value="${slideshowItem.title}"/>
+		              </div>
+		            </div>
+		            <div class="control-group">
+		              <label class="control-label">Ordering :</label>
+		              <div class="controls">
+		              	<input type="number" class="span11" name="itemOrderings" th:value="${slideshowItem.ordering}"/>
+		              </div>
+		            </div>
+		            <div class="control-group">
+		              <label class="control-label">File :</label>
+		              <div class="controls">
+		              	<input type="hidden" class="span11" name="itemFiles" th:value="${slideshowItem.fileName}"/>
+		              	<input type="file" class="span11" name="newItemsFiles"/>
+		              	<span th:if="${slideshowItem.fileName != ''}">
+                    		<img style="max-width:100px;max-height:100px;" th:src="@{/file/module/slideshow/{id}/{fileName}(id=${entity.id} , fileName=${slideshowItem.fileName})}"/>
+                   		</span>
+		              </div>
+		            </div>
+	           	</div>   
+	            <div >
+	            <span class="btn btn-warning btn-xs" onclick="addSlideInput()" >اضافه کردن عکس دیگر</span>
+	        </div>
+	        </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-success" th:text="#{text.general.Update}">Update</button>
+               <a class="btn btn-info" th:href="@{/admin/slideshow/index}" th:text="#{text.general.backToList}"></a>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+      </div>
+      
+      <div id="hiddenSlide" style="display: none;" >
+      <div  class="odd gradeX slide" >
+      	<span onclick="delete_slide(this)" class="del-slide"><span class="icon"> <i class="icon-minus"></i></span> remove</span>
+	            <div class="control-group">
+	              <label class="control-label">Title :</label>
+	              <div class="controls">
+	              	<input type="text" class="span11" name="newItemsTitle"/>
+	              </div>
+	            </div>
+	            <div class="control-group">
+	              <label class="control-label">Ordering :</label>
+	              <div class="controls">
+	              	<input type="number" class="span11" name="newItemsOrdering"/>
+	              </div>
+	            </div>
+	            <div class="control-group">
+	              <label class="control-label">File :</label>
+	              <div class="controls">
+	              	<input type="file" class="span11" name="newItemsFiles"/>
+	              </div>
+	            </div>
+           	</div> 
+           	</div> 
+</div>
+
+<div layout:fragment="bottom-fragment">
+
+<script>
+
+// var slideNum = 1 + 1;
+function addSlideInput() {
+  //  slideNum++;
+    // first change id s
+ //   $("#hiddenSlide .customupload").attr('id', 'customupload-'+slideNum);
+ //   $("#hiddenSlide .PhotoPrevs").attr('id', 'PhotoPrevs-'+slideNum);
+    $("#slides").append($("#hiddenSlide ").html());
+
+   // addUberUploader(slideNum);
+}
+function delete_slide(span){
+    if (confirm('Remove slide?')){
+        $(span).closest(".slide").remove();
+    }
+}
+
+function post_func(id){
+    var url = '<block th:remove="tag" th:utext="@{/admin/menu/delete/}" ></block>';
+
+    if (confirm('Are you sure you want to delete this Item?')){
+	    var form = $('#post_form');
+	    form.attr('action', url + id);
+		form.submit();
+    }
+
+}
+</script>
+</div>
+</html>

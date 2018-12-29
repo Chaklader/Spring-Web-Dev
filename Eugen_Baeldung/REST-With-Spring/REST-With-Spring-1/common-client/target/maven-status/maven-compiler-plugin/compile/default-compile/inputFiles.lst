@@ -1,0 +1,9 @@
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/common-client/src/main/java/org/baeldung/client/marshall/IMarshaller.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/common-client/src/main/java/org/baeldung/client/IDtoOperations.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/common-client/src/main/java/org/baeldung/client/template/AbstractBaseClientRestTemplate.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/common-client/src/main/java/org/baeldung/client/template/IReadOnlyTemplateWithUri.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/common-client/src/main/java/org/baeldung/client/util/HeaderUtil.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/common-client/src/main/java/org/baeldung/client/spring/CommonClientConfig.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/common-client/src/main/java/org/baeldung/client/util/UriUtil.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/common-client/src/main/java/org/baeldung/client/template/IRestClientWithUri.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/common-client/src/main/java/org/baeldung/client/util/SearchUriBuilder.java

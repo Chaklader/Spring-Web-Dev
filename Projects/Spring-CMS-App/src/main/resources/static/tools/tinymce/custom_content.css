@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "BKoodakBold";
+  src: url("../../fonts/BKoodakBold.eot?") format("eot"),
+  url("../fonts/BKoodakBold.woff") format("woff"),
+  url("../fonts/BKoodakBold.ttf") format("truetype");
+  font-weight: normal;
+	font-style: normal
+}
+@font-face {
+  font-family: "BHoma";
+  src: url("../../fonts/BHoma.eot?") format("eot"),
+  url("../../fonts/BHoma.woff") format("woff"),
+  url("../../fonts/BHoma.ttf") format("truetype");
+  font-weight: normal;
+	font-style: normal
+}

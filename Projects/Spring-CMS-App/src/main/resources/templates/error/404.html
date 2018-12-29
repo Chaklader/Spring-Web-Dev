@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="${@environment.getProperty('template.site.name.base')}">
+
+<span layout:fragment="title" th:remove="tag" >404 | Spring CMS</span>
+
+
+<div th:remove="tag" layout:fragment="main-content">
+
+<section id="error" class="container">
+        <h1>404, Page not found</h1>
+        <p>The Page you are looking for doesn't exist or an other error occurred.</p>
+        <a class="btn btn-success" th:href="@{/}">GO BACK TO THE HOMEPAGE</a>
+    </section><!--/#error-->
+
+</div><!--/layout:fragment="main-content"-->
+
+</html>
+

@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="${@environment.getProperty('template.site.name.base')}">
+
+<span layout:fragment="title" th:remove="tag" th:text="${page.title}">Spring CMS</span>
+
+<h1 layout:fragment="main-title" th:text="${page.title}">Spring CMS</h1>
+
+<div th:remove="tag" layout:fragment="main-content">
+
+   <section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1 th:text="${page.title}">Blog Item</h1>
+                </div>
+                <div class="col-sm-6">
+					<div></div>                    
+                </div>
+            </div>
+        </div>
+    </section><!--/#title--> 
+   	<div th:remove="tag" th:utext="${page.content}">
+   	</div>
+
+</div><!--/layout:fragment="main-content"-->
+
+
+
+<div layout:fragment="bottom-fragment">
+<script>
+
+</script>
+</div>
+</html>
+

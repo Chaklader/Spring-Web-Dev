@@ -1,0 +1,16 @@
+<form class="login" name="login" ng-submit="attemptLogin()" novalidate>
+  <h2>Login</h2>
+
+  <div class="form-group" ng-class="{'has-error': login.email.$invalid && !login.email.$pristine }">
+    <input type="email" name="email" class="form-control" ng-model="email" placeholder="email" required>
+  </div>
+
+  <div class="form-group" ng-class="{'has-error': login.password.$invalid && !login.password.$pristine }">
+    <input type="password" name="password" class="form-control" ng-model="password" ng-minlength="6" ng-maxlength="50" placeholder="password" required>
+  </div>
+
+  <button type="submit" class="btn btn-lg btn-primary btn-block" ng-disabled="login.$invalid">Submit</button>
+
+  <br />
+  <a class="pull-right" href="/#/register"><em>Register</em></a>
+</form>

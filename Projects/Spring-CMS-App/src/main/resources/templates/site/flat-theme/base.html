@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+	<meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+    <title><span layout:fragment="title">Spring CMS</span></title>
+    
+    <link th:href="@{/site/flat-theme/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/site/flat-theme/css/font-awesome.min.css}" rel="stylesheet" />
+    <link th:href="@{/site/flat-theme/css/prettyPhoto.css}" rel="stylesheet" />
+    <link th:href="@{/site/flat-theme/css/animate.css}" rel="stylesheet" />
+    <link th:href="@{/site/flat-theme/css/main.css}" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script th:src="@{/site/flat-theme/js/html5shiv.js}"></script>
+    <script th:src="@{/site/flat-theme/js/respond.min.js}"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" th:href="@{/site/flat-theme/images/ico/favicon.ico}" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" th:href="@{/site/flat-theme/images/ico/apple-touch-icon-144-precomposed.png}" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" th:href="@{/site/flat-theme/images/ico/apple-touch-icon-114-precomposed.png}" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" th:href="@{/site/flat-theme/images/ico/apple-touch-icon-72-precomposed.png}" />
+    <link rel="apple-touch-icon-precomposed" th:href="@{/site/flat-theme/images/ico/apple-touch-icon-57-precomposed.png}" />
+</head><!--/head-->
+
+<body>
+
+	<!--
+	<header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img th:src="@{/site/flat-theme/images/logo.png}" alt="logo"/></a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="career.html">Career</a></li>
+                            <li><a href="blog-item.html">Blog Single</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="404.html">404</a></li>
+                            <li><a href="registration.html">Registration</a></li>
+                            <li class="divider"></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Use</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html">Blog</a></li> 
+                    <li><a href="contact-us.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    -->
+    <!--/header-->
+
+
+	<div th:replace="site/flat-theme/fragment/mainmenu :: mainmenu"  />
+	
+
+	<div layout:fragment="main-content"></div>
+
+
+
+
+
+	<section id="bottom" class="wet-asphalt">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <h4>About Us</h4>
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+                    <p>Pellentesque habitant morbi tristique senectus.</p>
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <h4>Categories</h4>
+                    <div>
+                        <ul class="arrow">
+             	            <li th:each="contentCategory, itr : ${@blockService.getContentCategories()}" ><a th:href="@{${'/content/catList/{id}/{slug}'}(id=${contentCategory.id}, slug=${contentCategory.slug})}" th:text="${contentCategory.name}">Development</a></li>
+            
+                        </ul>
+                    </div>
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <h4>Latest Blog</h4>
+                    <div>
+                        <div th:each="latestContent : ${@blockService.getLatestContents()}" class="media">
+                            <div class="pull-left">
+                                <img style="max-width:64px; max-height:64px;" th:if="${latestContent.fileName != ''}" th:src="@{/file/module/content/{fileName}(fileName=${latestContent.fileName})}" alt=""/>
+                            </div>
+                            <div class="media-body">
+                                <span class="media-heading"><a th:href="@{/content/show/{id}/{slug}(id=${latestContent.id}, slug=${latestContent.slug})}" th:text="${latestContent.title}"></a></span>
+                                <small th:if="${latestContent.createdAt != null}" class="muted">Posted <span th:remove="tag"  th:text="${#dates.format(latestContent.createdAt, 'dd MM yyyy')}"></span></small>
+                            </div>
+                        </div>
+
+                    </div>  
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <h4>Address</h4>
+                    <address>
+                        <strong>Twitter, Inc.</strong><br/>
+                        795 Folsom Ave, Suite 600<br/>
+                        San Francisco, CA 94107<br/>
+                        <abbr title="Phone">P:</abbr> (123) 456-7890
+                    </address>
+                    <h4>Newsletter</h4>
+                    <form role="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" autocomplete="off" placeholder="Enter your email"/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger" type="button">Go!</button>
+                            </span>
+                        </div>
+                    </form>
+                </div> <!--/.col-md-3-->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2017 <a target="_blank" href="#" title="Spring CMS">SpringCMS</a>. All Rights Reserved.
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Faq</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script th:src="@{/site/flat-theme/js/jquery.js}"></script>
+    <script th:src="@{/site/flat-theme/js/bootstrap.min.js}"></script>
+    <script th:src="@{/site/flat-theme/js/jquery.prettyPhoto.js}"></script>
+    <script th:src="@{/site/flat-theme/js/main.js}"></script>
+
+	<div layout:fragment="bottom-fragment"></div>
+</body>
+</html>

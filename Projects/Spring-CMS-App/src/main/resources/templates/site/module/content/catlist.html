@@ -1,0 +1,186 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="${@environment.getProperty('template.site.name.base')}">
+
+<span layout:fragment="title" th:remove="tag" >Articles of <span th:text="${category.name}"></span> category</span>
+
+<h1 layout:fragment="main-title" >Articles of <span th:text="${category.name}"></span> category</h1>
+
+<div th:remove="tag" layout:fragment="main-content">
+
+
+<section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1 >Articles of <span th:text="${category.name}"></span> category</h1>
+                    <p></p>
+                </div>
+                <div class="col-sm-6">
+                    <div th:include="site/flat-theme/fragment/breadcrumb :: breadcrumb"></div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#title-->
+
+	<section id="blog" class="container">
+        <div class="row">
+        
+            <div th:include="site/module/content/segment/aside :: aside"></div>
+               
+            <div class="col-sm-8 col-sm-pull-4">
+                <div class="blog">
+                    <div th:each="content : ${result}" class="blog-item">
+                        <img th:if="${content.fileName != ''}" class="img-responsive img-blog" th:src="@{/file/module/content/{fileName}(fileName=${content.fileName})}" width="100%" alt="" />
+                        <div class="blog-content">
+                            <a th:href="@{/content/show/{id}/{slug}(id=${content.id}, slug=${content.slug})}"><h3 th:text="${content.title}"></h3></a>
+                            <div class="entry-meta">
+                                <span><i class="icon-user"></i> <a href="#">John</a></span>
+                                <span><i class="icon-folder-close"></i> <a th:href="@{${'/content/catList/{id}/{slug}'}(id=${category.id}, slug=${category.slug})}" th:text="${content.category.name}">Bootstrap</a></span>
+                                <span><i class="icon-calendar"></i> <span th:text="${content.createdAt}"></span></span>
+                                <span><i class="icon-comment"></i> <a href="blog-item.html#comments"><span th:remove="tag" th:text="${content.comments.size()}"></span> Comments</a></span>
+                            </div>
+                            <p th:utext="${content.content}"></p>
+                            <a class="btn btn-default" th:href="@{/content/show/{id}/{slug}(id=${content.id}, slug=${content.slug})}">Read More <i class="icon-angle-right"></i></a>
+                        </div>
+                    </div><!--/.blog-item-->
+                 <!-- 
+                    <ul class="pagination pagination-lg">
+                        <li><a href="#"><i class="icon-angle-left"></i></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#"><i class="icon-angle-right"></i></a></li>
+                    </ul>
+                    -->
+    
+    <ul th:if="${pagination.totalPages > 1 }" class="pagination pagination-lg">
+        <li th:class="${pagination.number eq 1} ? 'disabled' : ''">
+            <a th:if="${not pagination.firstPage}" th:href="@{${'/content/catList/{id}/{slug}'}(id=${category.id}, slug=${category.slug}, page=${pagination.number-1},size=${pagination.size})}">Previous</a>
+            <a th:if="${pagination.firstPage}" href="javascript:void(0);">Previous</a>
+        </li>
+
+        <li th:each="pageNo : ${#numbers.sequence(0, pagination.totalPages - 1)}" th:class="${pagination.number eq (pageNo+1)}? 'active' : ''">
+            <a th:if="${pagination.number  eq (pageNo+1)}" href="javascript:void(0);">
+                <span th:text="${pageNo + 1}"></span>
+            </a>
+            <a th:if="${not (pagination.number  eq (pageNo+1))}" th:href="@{${'/content/catList/{id}/{slug}'}(id=${category.id}, slug=${category.slug}, page=${pageNo+1},size=${pagination.size})}">
+                <span th:text="${pageNo + 1}"></span>
+            </a>
+
+        </li>
+        <li th:class="${pagination.number -1  ge pagination.totalPages} ? 'disabled' : ''">
+            <a th:if="${not pagination.lastPage}" th:href="@{${'/content/catList/{id}/{slug}'}(id=${category.id}, slug=${category.slug}, page=${pagination.number+1},size=${pagination.size})}">Next</a>
+            <a th:if="${pagination.lastPage}" href="javascript:void(0);">Next</a>
+        </li>
+    </ul>
+    
+    
+                </div>
+            </div><!--/.col-md-8-->
+        </div><!--/.row-->
+    </section><!--/#blog-->
+
+</div><!--/layout:fragment="main-content"-->
+
+
+
+<div layout:fragment="bottom-fragment">
+<script>
+$(document).ready(function($) {
+	
+	
+	
+	$("#comment-form").submit(function(event) {
+
+		// Prevent the form from submitting via the browser.
+		event.preventDefault();
+		test1();
+
+	});
+});
+
+function test1() {
+	
+	var token = $("meta[name='_csrf']").attr("content");
+	var header = $("meta[name='_csrf_header']").attr("content");
+	var url = $("#commentSaveUrl").val();
+	var id=1;
+	var content= $("#comment-form .content").val();
+	
+	$.ajax({ 
+		
+		contentType : "application/json",
+		dataType : 'json',
+		timeout : 100000,
+		beforeSend: function(xhr) {
+            // here it is
+            xhr.setRequestHeader(header, token);
+        },
+        type: 'POST',
+        url: url,
+        data: {id: id, content: content}
+    })
+    .done(function (data) {
+        console.debug(data);
+        if (data.status == "success") {
+            alert("ha");
+          /*  $('#cartModalMsg').text( 'محصول ' + data.product['name'] + ' به سبد خرید اضافه شد.') ;
+            
+            // update top cart menu data
+            //updateTopcartData(data.topcart);
+            $(".cart-box").html(data.topcartContent)
+            // update cartitems num
+            $('.top-cart .cart-num').text(data.itemsNum);
+            
+           var modal = $('#cartModal');
+           modal.modal('show');
+            */
+           // $("#cartModalA").click();
+          //  $( "#cartModalA" ).trigger( "click" );
+           
+        }
+        else if (data.status == "failed") {
+            /*
+            if('msg' in data) {
+                $("#cartModalMsg").html(data.msg);
+            }
+            else {
+                $("#cartModalMsg").html('<div class="alert alert-warning">مشکلی در ثبت محصول بوجود آمد لطفا دوباره تلاش کنید.</div>');
+            }
+        
+            var modal = $('#cartModal');
+            modal.modal('show');
+            */
+        }
+    });
+}
+
+function submitCommentjax() {
+	var data = {}
+	data["query"] = $("#query").val();
+
+	$.ajax({
+		type : "POST",
+		contentType : "application/json",
+		url : "${home}search/api/getSearchResult",
+		data : JSON.stringify(data),
+		dataType : 'json',
+		timeout : 100000,
+		success : function(data) {
+			console.log("SUCCESS: ", data);
+			display(data);
+		},
+		error : function(e) {
+			console.log("ERROR: ", e);
+			display(e);
+		},
+		done : function(e) {
+			console.log("DONE");
+		}
+	});
+}
+</script>
+</div>
+</html>
+

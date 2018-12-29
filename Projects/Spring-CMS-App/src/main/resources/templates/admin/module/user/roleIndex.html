@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <table>
+    <thead>
+    <tr>
+    <th>radif</th>
+    <th>name</th>
+    <th>actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    	<tr th:each="entity : ${roles}">
+    		<td></td>
+    		<td th:text="${entity.title}"></td>
+    		<td>
+                <a th:href="@{/admin/acl/rolePermission/{contentId}(contentId=${entity.id})}" >ویرایش</a>     
+            </td>
+    	</tr>
+    </tbody>
+    </table>
+
+</div>
+<!-- /container -->
+
+
+</body>
+</html>

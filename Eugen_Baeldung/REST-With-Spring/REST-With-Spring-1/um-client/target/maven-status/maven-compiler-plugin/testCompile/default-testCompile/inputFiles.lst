@@ -1,0 +1,10 @@
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/um-client/src/test/java/org/baeldung/um/client/template/RoleRestClient.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/um-client/src/test/java/org/baeldung/um/client/template/PrivilegeRestClient.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/um-client/src/test/java/org/baeldung/um/model/PrincipalDtoOpsImpl.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/um-client/src/test/java/org/baeldung/um/client/marshall/JacksonMarshaller.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/um-client/src/test/java/org/baeldung/um/client/FixtureResourceFactory.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/um-client/src/test/java/org/baeldung/um/client/marshall/TestMarshallerFactory.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/um-client/src/test/java/org/baeldung/um/model/UserDtoOpsImpl.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/um-client/src/test/java/org/baeldung/um/model/RoleDtoOpsImpl.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/um-client/src/test/java/org/baeldung/um/client/template/UserRestClient.java
+/Users/Chaklader/Documents/Education/Spring Web Dev/Eugen_Baeldung/REST-With-Spring/REST-With-Spring-1/um-client/src/test/java/org/baeldung/um/model/PrivilegeDtoOpsImpl.java

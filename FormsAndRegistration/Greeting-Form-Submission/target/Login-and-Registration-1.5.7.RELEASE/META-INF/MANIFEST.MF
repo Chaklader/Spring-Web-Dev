@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: Login-and-Registration
+Implementation-Version: 1.5.7.RELEASE
+Built-By: Chaklader
+Implementation-Vendor-Id: org.springframework.boot
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8.0_144
+Main-Class: ${start-class}
+

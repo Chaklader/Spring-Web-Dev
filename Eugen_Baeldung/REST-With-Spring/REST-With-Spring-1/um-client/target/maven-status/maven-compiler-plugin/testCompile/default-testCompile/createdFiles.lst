@@ -1,0 +1,14 @@
+org/baeldung/um/client/template/UserRestClient.class
+org/baeldung/um/model/PrivilegeDtoOpsImpl.class
+org/baeldung/um/client/marshall/JacksonMarshaller.class
+org/baeldung/um/model/PrincipalDtoOpsImpl.class
+org/baeldung/um/client/marshall/JacksonMarshaller$4.class
+org/baeldung/um/client/FixtureResourceFactory.class
+org/baeldung/um/client/marshall/JacksonMarshaller$1.class
+org/baeldung/um/client/template/RoleRestClient.class
+org/baeldung/um/model/UserDtoOpsImpl.class
+org/baeldung/um/client/marshall/JacksonMarshaller$2.class
+org/baeldung/um/client/marshall/TestMarshallerFactory.class
+org/baeldung/um/model/RoleDtoOpsImpl.class
+org/baeldung/um/client/marshall/JacksonMarshaller$3.class
+org/baeldung/um/client/template/PrivilegeRestClient.class

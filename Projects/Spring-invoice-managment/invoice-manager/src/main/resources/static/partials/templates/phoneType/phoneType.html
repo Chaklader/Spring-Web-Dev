@@ -1,0 +1,13 @@
+<div ng-show="authority === 'ROLE_ADMIN'">
+	<h1>Phone type:</h1><ul class="nav nav-pills" role="tablist">
+	<li ui-sref-active="active"><a ui-sref="phoneType.list" >Phone list</a></li>
+	<li ui-sref-active="active"><a ui-sref="phoneType.new" >Phone new</a><li>
+	</ul>
+<div ui-view></div>
+</div>
+<div ng-show="!authenticated">
+	<p>Login to see this content</p>
+</div>
+<div ng-show="(authenticated && authority !== 'ROLE_ADMIN')">
+	<p>Access denied</p>
+</div>

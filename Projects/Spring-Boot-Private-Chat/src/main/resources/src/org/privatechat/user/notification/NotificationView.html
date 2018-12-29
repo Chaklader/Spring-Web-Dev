@@ -1,0 +1,5 @@
+<div ng-show="notifications.length > 0" class="notifications">
+  <ul ng-repeat="(key, value) in notifications track by $index">
+    <li ng-click="acknowledgeNotification(value)">{{value.content}}</li>
+  </ul>
+</div>

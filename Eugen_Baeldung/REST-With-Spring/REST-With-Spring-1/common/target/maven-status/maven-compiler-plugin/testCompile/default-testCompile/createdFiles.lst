@@ -1,0 +1,4 @@
+org/baeldung/common/security/Base64UnitTest.class
+org/baeldung/common/web/UriUnitTest.class
+org/baeldung/common/util/ParseQueryStringUnitTest.class
+org/baeldung/common/util/LinkUtilTest.class

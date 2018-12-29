@@ -1,0 +1,18 @@
+<navbar></navbar>
+
+<div class="panel panel-default" ng-show="showChat" ng-init="messages = []">
+  <div class="panel-heading">Private Chat</div>
+
+  <div class="panel-body" id="chat-area">
+    <div ng-repeat="msg in messages track by $index">
+      <p class="chat-message" ng-class="{'from-recipient': msg.isFromRecipient}">
+        <strong>{{msg.author}}</strong>: {{msg.contents}}
+      </p>
+    </div>
+  </div>
+
+  <form>
+    <input type="text" class="form-control pull-left" style="width:90%" ng-model="currentMessage" />
+    <button type="submit" class="btn btn-primary-outline pull-right" style="width:10%" ng-click="sendChatMessage()">send</button>
+  </form>
+</div>

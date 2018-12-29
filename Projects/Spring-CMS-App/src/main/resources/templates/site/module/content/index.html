@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="site/base">
+<div layout:fragment="content">
+<div class="container" id="module-content">
+   
+   
+	<div th:each='content : ${page.getContent()}' >
+		<h3 th:text="${content.title}"></h3>
+		<div th:text="${content.content}"></div>
+	</div>
+	
+	<div th:include="fragment/paginationbar :: paginationbar">...</div>
+</div>
+</div>
+

@@ -1,0 +1,9 @@
+<h1>state home</h1>
+<div ng-show="authenticated">
+	<a ui-sref="home.resource">Show generated resources from /resource
+		api</a>
+	<div ui-view></div>
+</div>
+<div ng-show="!authenticated">
+	<p>Login to see your greeting</p>
+</div>

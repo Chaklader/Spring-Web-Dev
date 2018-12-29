@@ -1,0 +1,7 @@
+h1. JerseyOAuth2
+
+Did you ever want to offer OAuth2 for your (Jersey) REST service? Did you hold back, because there
+was no server framework available for Jersey? Now here is the solution...
+
+See the "Wiki":https://github.com/hburgmeier/jerseyoauth2/wiki for details.
+

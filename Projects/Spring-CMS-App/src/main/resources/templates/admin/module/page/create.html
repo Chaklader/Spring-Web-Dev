@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="${@environment.getProperty('template.admin.name.base')}">
+
+<span layout:fragment="title" th:remove="tag">Page Management</span>
+
+<h1 layout:fragment="main-title">Page Management</h1>
+
+<div layout:fragment="main-content">
+<div class="row-fluid">
+    <div class="span12">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>New Category</h5>
+        </div>
+        <div class="widget-content nopadding">
+          <form  method="POST" th:action="@{/admin/page/store}"  th:object="${entityForm}" class="form-horizontal">
+          	<div class="control-group">
+              <label class="control-label">Title :</label>
+              <div class="controls">
+              	<input type="text" class="span11" th:field="*{title}" />
+              	<p class="field-error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
+              </div>
+            </div>
+            <div class="control-group">
+            
+              <label class="control-label">Content :</label>
+              <div class="controls">
+           		<textarea  class=" textarea_editor span12" placeholder="Enter text ..." th:field="*{content}"></textarea>
+              	<p class="field-error" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></p>
+              </div>
+            </div>
+            <input type="hidden" 
+           th:name="${_csrf.parameterName}" 
+           th:value="${_csrf.token}" />
+            <div class="form-actions">
+              <button type="submit" class="btn btn-success" th:text="#{text.general.Create}"></button>
+              <a class="btn btn-info" th:href="@{/admin/page/index}" th:text="#{text.general.backToList}"></a>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+      </div>
+</div>
+</html>

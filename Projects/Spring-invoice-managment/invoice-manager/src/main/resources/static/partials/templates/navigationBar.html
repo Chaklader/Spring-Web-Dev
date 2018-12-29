@@ -1,0 +1,13 @@
+<div class="container">
+
+	<ul class="nav nav-pills" role="tablist">
+		<li ui-sref-active="active"><a ui-sref="home">home</a></li>
+		<li ui-sref-active="active" ng_show="authority === 'ROLE_ADMIN'"><a
+			ui-sref="phoneType">Phone type</a></li>
+		<li ui-sref-active="active"><a ui-sref="login"
+			ng_hide="authenticated">login</a></li>
+		<li ui-sref-active="active"><a ui-sref="logout"
+			ng_show="authenticated">logout</a></li>
+	</ul>
+
+</div>

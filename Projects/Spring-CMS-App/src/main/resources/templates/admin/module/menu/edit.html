@@ -1,0 +1,101 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="${@environment.getProperty('template.admin.name.base')}">
+
+<span layout:fragment="title" th:remove="tag">Menu Management</span>
+
+<h1 layout:fragment="main-title">Menu Management</h1>
+
+<div layout:fragment="main-content">
+
+<div th:include="admin/fragment/message :: message"></div>
+
+<div class="row-fluid">
+    <div class="span12">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>New Menu</h5>
+        </div>
+        <div class="widget-content nopadding">
+          <form  method="POST" th:action="@{/admin/menu/update/{contentId}(contentId=${entityForm.id})}"  th:object="${entityForm}" class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label">Title :</label>
+              <div class="controls">
+              	<input type="text" class="span11" th:field="*{title}" />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" th:text="#{text.general.Order}"></label>
+              <div class="controls">
+              	<input type="number" class="span11" th:field="*{ordering}" />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">parent</label>
+              <div class="controls">
+                <select class="form-control input-sm"  th:field="*{parentId}">
+					<option value="">root</option>
+					<span th:utext="${selectOptions}"></span>
+				</select>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">type</label>
+              <div class="controls">
+                <select id="type" class="form-control input-sm"  th:field="*{itemType}">
+					<span th:each="dataItem : ${data.keySet()}" th:remove="tag" th:utext="${dataItem}"></span>
+				</select>
+              </div>
+            </div>
+           
+            <span th:each="dataItemValue : ${data.values()}" th:remove="tag" th:utext="${dataItemValue}"></span>
+           	
+            <input type="hidden" 
+           th:name="${_csrf.parameterName}" 
+           th:value="${_csrf.token}" />
+            <div class="form-actions">
+              <button type="submit" class="btn btn-success" th:text="#{text.general.Create}"></button>
+              <a class="btn btn-info" th:href="@{/admin/menu/index}" th:text="#{text.general.backToList}"></a>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+      </div>
+      
+      <style>
+      
+   /* body#tinymce{
+        font-family: tahoma;
+        font-size: 16px;
+    }*/
+    .types{
+        display: none;
+    }
+    #customUrl{
+        display: block;
+    }
+
+</style>
+</div>
+
+<div layout:fragment="bottom-fragment">
+
+<script>
+
+$(function () {
+	
+	
+	var selectedType = $( "#type option:selected" ).val();
+	$("#" + selectedType).slideDown();
+	//alert("hi1");
+    var postsLoaded = false;
+    $("#type").change(function () {
+    //	alert("hi");
+        $('.types').slideUp();
+        $("#" + $(this).val()).slideDown();
+    });
+});
+
+</script>
+</div>
+
+</html>

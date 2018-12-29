@@ -1,0 +1,478 @@
+<html>
+	<head>
+		<title>hasCode.com - REST-assured Examples</title>
+		<style type="text/css">
+			body {
+				font-family: Arial, sans-serif;
+			}
+			h1 {
+				font-size:20px;
+				border-bottom:5px solid #000;
+				margin-top:20px;
+			}
+				
+			table, td {
+				border:1px solid #000;
+				padding: 10px;
+				border-collapse:collapse;
+				font-size:12px;
+			}	
+			th {
+				background-color:#000;
+				color:#fff;
+				font-size:13px;
+				height:20px;
+				padding:5px 10px;
+			}
+			blockquote {
+				text-align:left;
+			}
+			em {
+				font-weight:bold;
+				font-style:normal;
+				font-size:13px;
+			}
+			.type {
+				background-color:#666;
+			}
+			.header {
+				background-color:#ddd;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>hasCode.com REST-assured Examples</h1>
+		<table>
+			<caption>Services Overview</caption>
+			<tbody>
+				<!-- Example #1 -->
+				<tr>
+					<th colspan="5"><em>Validate returned JSON via GET</em></th>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Request</td>
+					<td class="header">URL</td>
+					<td class="header">Method</td>
+					<td class="header">Content-Type</td>
+					<td class="header">Extras</td>
+				</tr>
+				<tr>
+					<td><a href="./service/single-user">/service/single-user</a></td>
+					<td>GET</td>
+					<td>-</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Response</td>
+					<td class="header">Status</td>
+					<td class="header">Content-Type</td>
+					<td colspan="2" class="header">Body/Content</td>
+				</tr>
+				<tr>
+					<td>200</td>
+					<td>application/json</td>
+					<td colspan="2"><blockquote><pre escaped="true" lang="json">{
+  "email":"test@hascode.com",
+  "firstName":"Tim",
+  "id":"1",
+  "lastName":"Testerman"
+}</pre></blockquote></td>
+				</tr>
+				
+				<!-- Example #2 -->
+				<tr>
+					<th colspan="5"><em>Validate returned XML via GET</em></th>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Request</td>
+					<td class="header">URL</td>
+					<td class="header">Method</td>
+					<td class="header">Content-Type</td>
+					<td class="header">Extras</td>
+				</tr>
+				<tr>
+					<td><a href="./service/single-user/xml">/service/single-user/xml</a></td>
+					<td>GET</td>
+					<td>-</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Response</td>
+					<td class="header">Status</td>
+					<td class="header">Content-Type</td>
+					<td colspan="2" class="header">Body/Content</td>
+				</tr>
+				<tr>
+					<td>200</td>
+					<td>application/xml</td>
+					<td colspan="2"><blockquote><pre escaped="true" lang="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;user&gt;
+  &lt;email&gt;test@hascode.com&lt;/email&gt;
+  &lt;firstName&gt;Tim&lt;/firstName&gt;
+  &lt;id&gt;1&lt;/id&gt;
+  &lt;lastName&gt;Testerman&lt;/lastName&gt;
+&lt;/user&gt;</pre></blockquote></td>
+				</tr>
+				
+				<!-- Example #3 -->
+				<tr>
+					<th colspan="5"><em>XPath Validation</em></th>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Request</td>
+					<td class="header">URL</td>
+					<td class="header">Method</td>
+					<td class="header">Content-Type</td>
+					<td class="header">Extras</td>
+				</tr>	
+				<tr>
+					<td><a href="./service/persons/xml">/service/persons/xml</a></td>
+					<td>GET</td>
+					<td>-</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Response</td>
+					<td class="header">Status</td>
+					<td class="header">Content-Type</td>
+					<td colspan="2" class="header">Body/Content</td>
+				</tr>
+				<tr>
+					<td>200</td>
+					<td>application/xml</td>
+					<td colspan="2"><blockquote><pre escaped="true" lang="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;people&gt;
+  &lt;person id="1"&gt;
+    &lt;email&gt;test@hascode.com&lt;/email&gt;
+    &lt;firstName&gt;Tim&lt;/firstName&gt;
+    &lt;lastName&gt;Testerman&lt;/lastName&gt;
+  &lt;/person&gt;
+  &lt;person id="20"&gt;
+    &lt;email&gt;dev@hascode.com&lt;/email&gt;
+    &lt;firstName&gt;Sara&lt;/firstName&gt;
+    &lt;lastName&gt;Stevens&lt;/lastName&gt;
+  &lt;/person&gt;
+  &lt;person id="11"&gt;
+    &lt;email&gt;devnull@hascode.com&lt;/email&gt;
+    &lt;firstName&gt;Mark&lt;/firstName&gt;
+    &lt;lastName&gt;Mustache&lt;/lastName&gt;
+  &lt;/person&gt;
+&lt;/people&gt;</pre></blockquote></td>
+				</tr>	
+				
+					<!-- Example #3 -->
+				<tr>
+					<th colspan="5"><em>JSON Structure</em></th>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Request</td>
+					<td class="header">URL</td>
+					<td class="header">Method</td>
+					<td class="header">Content-Type</td>
+					<td class="header">Extras</td>
+				</tr>	
+				<tr>
+					<td><a href="./service/persons/json">/service/persons/json</a></td>
+					<td>GET</td>
+					<td>-</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Response</td>
+					<td class="header">Status</td>
+					<td class="header">Content-Type</td>
+					<td colspan="2" class="header">Body/Content</td>
+				</tr>
+				<tr>
+					<td>200</td>
+					<td>application/json</td>
+					<td colspan="2"><blockquote><pre escaped="true" lang="json">{
+	"person":[
+	{
+		"@id":"1",
+		"email":"test@hascode.com",
+		"firstName":"Tim",
+		"lastName":"Testerman"
+	},{
+		"@id":"20",
+		"email":"dev@hascode.com",
+		"firstName":"Sara",
+		"lastName":"Stevens"
+	},{
+		"@id":"11",
+		"email":"devnull@hascode.com",
+		"firstName":"Mark",
+		"lastName":"Mustache"
+	}
+	]
+}</pre></blockquote></td>
+				</tr>	
+				
+				<!-- Example #4 -->
+				<tr>
+					<th colspan="5"><em>Passing Parameters</em></th>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Request</td>
+					<td class="header">URL</td>
+					<td class="header">Method</td>
+					<td class="header">Content-Type</td>
+					<td class="header">Extras</td>
+				</tr>
+				<tr>
+					<td><a href="./service/user/create">/service/user/create</a></td>
+					<td>GET</td>
+					<td>-</td>
+					<td>Params: email, firstName, lastName</td>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Response</td>
+					<td class="header">Status</td>
+					<td class="header">Content-Type</td>
+					<td colspan="2" class="header">Body/Content</td>
+				</tr>
+				<tr>
+					<td>200</td>
+					<td>application/json</td>
+					<td colspan="2"><blockquote><pre escaped="true" lang="xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;user&gt;
+  &lt;email&gt;test@hascode.com&lt;/email&gt;
+  &lt;firstName&gt;Tim&lt;/firstName&gt;
+  &lt;id&gt;1&lt;/id&gt;
+  &lt;lastName&gt;Testerman&lt;/lastName&gt;
+&lt;/user&gt;</pre></blockquote></td>
+				</tr>	
+
+				<!-- Example #5 -->
+				<tr>
+					<th colspan="5"><em>404 - Page Not Found</em></th>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Request</td>
+					<td class="header">URL</td>
+					<td class="header">Method</td>
+					<td class="header">Content-Type</td>
+					<td class="header">Extras</td>
+				</tr>
+				<tr>
+					<td><a href="./service/status/notfound">/service/status/notfound</a></td>
+					<td>GET</td>
+					<td>-</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Response</td>
+					<td class="header">Status</td>
+					<td class="header">Content-Type</td>
+					<td colspan="2" class="header">Body/Content</td>
+				</tr>
+				<tr>
+					<td>404</td>
+					<td>text/plain</td>
+					<td colspan="2">-</td>
+				</tr>					
+
+				<!-- Example #6 -->
+				<tr>
+					<th colspan="5"><em>Basic Authentication</em></th>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Request</td>
+					<td class="header">URL</td>
+					<td class="header">Method</td>
+					<td class="header">Content-Type</td>
+					<td class="header">Extras</td>
+				</tr>
+				<tr>
+					<td><a href="./service/secure/person">/service/secure/person</a></td>
+					<td>GET</td>
+					<td>-</td>
+					<td>Basic Auth with username=admin and password=admin</td>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Response</td>
+					<td class="header">Status</td>
+					<td class="header">Content-Type</td>
+					<td colspan="2" class="header">Body/Content</td>
+				</tr>
+				<tr>
+					<td>401 / 200</td>
+					<td>text/plain</td>
+					<td colspan="2">-</td>
+				</tr>	
+				
+																						<!-- Example #6 -->
+				<tr>
+					<th colspan="5"><em>HTTP Headers</em></th>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Request</td>
+					<td class="header">URL</td>
+					<td class="header">Method</td>
+					<td class="header">Content-Type</td>
+					<td class="header">Extras</td>
+				</tr>
+				<tr>
+					<td><a href="./service/header/print">/service/header/print</a></td>
+					<td>GET</td>
+					<td>-</td>
+					<td>Header "myparam"</td>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Response</td>
+					<td class="header">Status</td>
+					<td class="header">Content-Type</td>
+					<td colspan="2" class="header">Body/Content</td>
+				</tr>
+				<tr>
+					<td>200</td>
+					<td>text/plain</td>
+					<td colspan="2">String value of given header param "myparam"</td>
+				</tr>	
+				
+				<tr>
+					<th colspan="5"><em>Returning multiple HTTP Headers</em></th>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Request</td>
+					<td class="header">URL</td>
+					<td class="header">Method</td>
+					<td class="header">Content-Type</td>
+					<td class="header">Extras</td>
+				</tr>
+				<tr>
+					<td><a href="./service/header/multiple">/service/header/multiple</a></td>
+					<td>GET</td>
+					<td>-</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Response</td>
+					<td class="header">Status</td>
+					<td class="header">Content-Type</td>
+					<td colspan="2" class="header">Headers</td>
+				</tr>
+				<tr>
+					<td>200</td>
+					<td>text/plain</td>
+					<td colspan="2">customHeader1:foo, anotherHeader:bar</td>
+				</tr>	
+				
+				<tr>
+					<th colspan="5"><em>Sending Cookies</em></th>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Request</td>
+					<td class="header">URL</td>
+					<td class="header">Method</td>
+					<td class="header">Content-Type</td>
+					<td class="header">Extras</td>
+				</tr>
+				<tr>
+					<td><a href="./service/access/cookie-token-secured">/service/access/cookie-token-secured</a></td>
+					<td>GET</td>
+					<td>-</td>
+					<td>Cookie: authtoken</td>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Response</td>
+					<td class="header">Status</td>
+					<td class="header">Content-Type</td>
+					<td colspan="2" class="header">Body</td>
+				</tr>
+				<tr>
+					<td>403 (if cookie authtoken != abcdef)/ 200</td>
+					<td>text/plain</td>
+					<td colspan="2">-</td>
+				</tr>	
+				
+				<tr>
+					<th colspan="5"><em>Receiving Cookies</em></th>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Request</td>
+					<td class="header">URL</td>
+					<td class="header">Method</td>
+					<td class="header">Content-Type</td>
+					<td class="header">Request Parameter</td>
+				</tr>
+				<tr>
+					<td><a href="./service/cookie/modify">/service/cookie/modify</a></td>
+					<td>GET</td>
+					<td>-</td>
+					<td>name</td>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Response</td>
+					<td class="header">Status</td>
+					<td class="header">Content-Type</td>
+					<td colspan="2" class="header">Cookie</td>
+				</tr>
+				<tr>
+					<td>200</td>
+					<td>text/plain</td>
+					<td colspan="2">userName:value-of-name-request-parameter</td>
+				</tr>	
+				
+				<tr>
+					<th colspan="5"><em>File uploads</em></th>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Request</td>
+					<td class="header">URL</td>
+					<td class="header">Method</td>
+					<td class="header">Content-Type</td>
+					<td class="header">Param</td>
+				</tr>
+				<tr>
+					<td><a href="./service/file/upload">/service/file/upload</a></td>
+					<td>GET</td>
+					<td>multipart/form-data</td>
+					<td>file</td>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Response</td>
+					<td class="header">Status</td>
+					<td class="header">Content-Type</td>
+					<td colspan="2" class="header">Body</td>
+				</tr>
+				<tr>
+					<td>200</td>
+					<td>text/plain</td>
+					<td colspan="2">the file's content</td>
+				</tr>	
+				
+				<tr>
+					<th colspan="5"><em>Sending illegal content type</em></th>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Request</td>
+					<td class="header">URL</td>
+					<td class="header">Method</td>
+					<td class="header">Content-Type</td>
+					<td class="header">Param</td>
+				</tr>
+				<tr>
+					<td><a href="./service/detail/json">/service/detail/json</a></td>
+					<td>GET</td>
+					<td>-</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td class="type" rowspan="2">Response</td>
+					<td class="header">Status</td>
+					<td class="header">Content-Type</td>
+					<td colspan="2" class="header">Body</td>
+				</tr>
+				<tr>
+					<td>200</td>
+					<td><i>text</i>/json</td>
+					<td colspan="2">{"test":true}</td>
+				</tr>	
+				<tr>
+					<td colspan="5" style="text-align:center"><a href="http://www.hascode.com">by Micha Kops - hasCode.com</a></td>
+				</tr>																										
+			</tbody>
+		</table>
+	</body>
+</html>

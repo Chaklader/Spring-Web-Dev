@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://benchresources.in/cdm/Player" xmlns:tns="http://benchresources.in/cdm/Player"
+	elementFormDefault="qualified">
+
+	<!-- player object with four attributes -->
+	<xsd:element name="PlayerType">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="playerId" type="xsd:int" />
+				<xsd:element name="name" type="xsd:string" />
+				<xsd:element name="age" type="xsd:int" />
+				<xsd:element name="matches" type="xsd:int" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- an object to contain lists of players referencing above player object -->
+	<xsd:element name="PlayerListType">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="tns:PlayerType" minOccurs="0"
+					maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

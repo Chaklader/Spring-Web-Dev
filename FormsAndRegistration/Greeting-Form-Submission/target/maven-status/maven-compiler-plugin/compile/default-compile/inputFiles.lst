@@ -1,0 +1,13 @@
+/Users/Chaklader/IdeaProjects/LoginTemplate/src/main/java/com/boot/registration/service/UserServiceImpl.java
+/Users/Chaklader/IdeaProjects/LoginTemplate/src/main/java/com/boot/registration/config/WebSecurityConfig.java
+/Users/Chaklader/IdeaProjects/LoginTemplate/src/main/java/com/boot/registration/service/SecurityService.java
+/Users/Chaklader/IdeaProjects/LoginTemplate/src/main/java/com/boot/registration/service/UserService.java
+/Users/Chaklader/IdeaProjects/LoginTemplate/src/main/java/com/boot/registration/service/UserDetailsServiceImpl.java
+/Users/Chaklader/IdeaProjects/LoginTemplate/src/main/java/com/boot/registration/repository/UserRepository.java
+/Users/Chaklader/IdeaProjects/LoginTemplate/src/main/java/com/boot/registration/WebApplication.java
+/Users/Chaklader/IdeaProjects/LoginTemplate/src/main/java/com/boot/registration/repository/RoleRepository.java
+/Users/Chaklader/IdeaProjects/LoginTemplate/src/main/java/com/boot/registration/entity/User.java
+/Users/Chaklader/IdeaProjects/LoginTemplate/src/main/java/com/boot/registration/controller/UserController.java
+/Users/Chaklader/IdeaProjects/LoginTemplate/src/main/java/com/boot/registration/entity/Role.java
+/Users/Chaklader/IdeaProjects/LoginTemplate/src/main/java/com/boot/registration/service/SecurityServiceImpl.java
+/Users/Chaklader/IdeaProjects/LoginTemplate/src/main/java/com/boot/registration/validator/UserValidator.java

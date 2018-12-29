@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <form method="POST" th:action="@{/admin/acl/rolePermissionUpdate/{contentId}(contentId=${role.id})}"  th:object="${role}" class="form-signin">
+
+    <table>
+    <thead>
+    <tr>
+    <th>radif</th>
+    <th>name</th>
+    <th>actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <p>name: <input type="text" th:field="*{name}" /></p>
+    <select  th:field="*{permissions}" multiple="multiple">
+			
+			<option th:each="permission : ${permissions}"
+				th:value="${{permission}}"
+				th:text="${permission.name}"></option>
+		</select>
+    	
+    </tbody>
+    </table>
+    
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Update</button>
+</form>
+</div>
+<!-- /container -->
+
+
+</body>
+</html>

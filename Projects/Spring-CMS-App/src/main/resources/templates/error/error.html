@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="base">
+<head>
+    <title>welcome</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/common.css}" rel="stylesheet"/>
+</head>
+
+
+<body>
+<div layout:fragment="content">
+<div class="container"  >
+
+<div th:if="errorMsg!= null" th:text="${errorMsg}"></div>
+</div>
+</div>
+
+
+</body>
+</html>

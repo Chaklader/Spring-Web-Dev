@@ -1,0 +1,31 @@
+.from-recipient {
+  color: #5F9EA0 !important;
+}
+
+.chat-message {
+  color: #00BFFF;
+}
+
+#chat-area {
+  overflow-y: auto;
+  height: 500px;
+  max-height: 600px;
+}
+
+// TODO: fix this because it's kind of hacky...
+// deals with auto-height sizing
+@media (max-height: 399px) {
+  #chat-area {
+    max-height: 100px;
+  }
+}
+@media (min-height: 400px) {
+  #chat-area {
+    max-height: 300px;
+  }
+}
+@media (min-height: 700px) {
+  #chat-area {
+    max-height: 600px;
+  }
+}

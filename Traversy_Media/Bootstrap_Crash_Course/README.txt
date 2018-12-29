@@ -1,0 +1,8 @@
+
+
+
+BOOTSTRAP CRASH COURSE/ TRAVERSY MEDIA 
+——————————————————————————————————————
+
+
+WEB LINK <HTTPS://WWW.YOUTUBE.COM/WATCH?V=5GCQTLDGXY8> 

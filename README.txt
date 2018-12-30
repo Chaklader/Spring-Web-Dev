@@ -64,7 +64,6 @@
 
 
 
-
 	Distributed Cache 
 	—————————————————
 
@@ -615,32 +614,32 @@
 	AWS Lamda 
 	—————————
 
-	Aws S3 With Java
+		Aws S3 With Java
 
-	Aws Lambda With Java
+		Aws Lambda With Java
 
-	Aws Lambda Using Dynamodb With Java
+		Aws Lambda Using Dynamodb With Java
 
-	Spring Cloud Aws – S3
+		Spring Cloud Aws – S3
 
-	Using Aws Lambda With Api Gateway
+		Using Aws Lambda With Api Gateway
 
-	Spring Cloud Aws – Ec2
+		Spring Cloud Aws – Ec2
 
-	Introduction To Aws Serverless Application Model
+		Introduction To Aws Serverless Application Model
 
 
 
 	Tagging The Words 
 	—————————————————
 
-	A Simple Tagging Implementation With Elasticsearch - Baeldung
+		A Simple Tagging Implementation With Elasticsearch - Baeldung
 
-	A Simple Tagging Implementation With Jpa - Baeldung
+		A Simple Tagging Implementation With Jpa - Baeldung
 
-	An Advanced Tagging Implementation With Jpa - Baeldung
+		An Advanced Tagging Implementation With Jpa - Baeldung
 
-	A Simple Tagging Implementation With Mongodb - Baeldung
+		A Simple Tagging Implementation With Mongodb - Baeldung
 
 
 
@@ -655,42 +654,42 @@
 	———————————————————————
 
 
-	Rest Api Basics - I
+	Rest API Basics - I
 	———————————————————
 
 
-	Bootstrapping A Web Application
+		Bootstrapping A Web Application
 
-	Building A Rest Api
+		Building A Rest Api
 
-	Securing A Rest Api
+		Securing A Rest Api
 
-	Basic And Digest Authentication For A Rest Api
+		Basic And Digest Authentication For A Rest Api
 
-	Rest Pagination
+		Rest Pagination
 
-	Error Handling For Rest
+		Error Handling For Rest
 
-	Entity To Dto Conversion For A Spring Rest Api
+		Entity To Dto Conversion For A Spring Rest API
 
 
 
-	Rest Api Advanced Topics - Ii
+	Rest API Advanced Topics - Ii
 	—————————————————————————————
 
-	Etags For Rest
+		Etags For Rest
 
-	Rest Api Discoverability And Hateoas
+		Rest Api Discoverability And Hateoas
 
-	Rest Api Discoverability
+		Rest Api Discoverability
 
-	Versioning A Rest Api
+		Versioning A Rest Api
 
-	Building A Rest Query Language (Series)
+		Building A Rest Query Language (Series)
 
-	Apply Cqrs To A Spring Rest Api
+		Apply Cqrs To A Spring Rest Api
 
-	Setting Up Swagger 2 With A Spring Rest Api
+		Setting Up Swagger 2 With A Spring Rest API
 
 
 
@@ -698,34 +697,34 @@
 	Test And Consume The Api - Iii
 	——————————————————————————————
 
-	Test A Rest Api With Java
+		Test A Rest Api With Java
 
-	Testing Rest With Multiple Mime Types
+		Testing Rest With Multiple Mime Types
 
-	Resttemplate With Basic Authentication
+		Resttemplate With Basic Authentication
 
-	Resttemplate With Digest Authentication
-
-
+		Resttemplate With Digest Authentication
 
 
 
 
-	Introduction To Jcache
 
-	Guide To Hazelcast With Java
 
-	Spring Boot Actuator
+		Introduction To JCache
 
-	Metrics For Your Spring Rest Api
+		Guide To Hazelcast With Java
 
-	Custom Information In Spring Boot Info Endpoint
+		Spring Boot Actuator
 
-	An Intro To Spring Cloud Zookeeper
+		Metrics For Your Spring Rest Api
 
-	Setting Up Swagger 2 With A Spring Rest Api
+		Custom Information In Spring Boot Info Endpoint
 
-	Spring Boot Authentication Auditing Support
+		An Intro To Spring Cloud Zookeeper
+
+		Setting Up Swagger 2 With A Spring Rest Api
+
+		Spring Boot Authentication Auditing Support
 
 
 
@@ -733,33 +732,33 @@
 	Concurrency 
 	———————————
 
-	Concurrency With Lmax Disruptor – An Introduction
+		Concurrency With Lmax Disruptor – An Introduction
 
-	Java Concurrency Interview Questions (+ Answers)
+		Java Concurrency Interview Questions (+ Answers)
 
-	Guide To Java.util.concurrent.locks
+		Guide To Java.util.concurrent.locks
 
-	A Guide To The Java Executorservice
+		A Guide To The Java Executorservice
 
-	Guide To Java.util.concurrent.blockingqueue
+		Guide To Java.util.concurrent.blockingqueue
 
-	Concurrent Test Execution In Spring 5
+		Concurrent Test Execution In Spring 5
 
-	Introduction To Thread Pools In Java
+		Introduction To Thread Pools In Java
 
-	Control The Session With Spring Security
+		Control The Session With Spring Security
 
-	A Guide To Concurrentmap
+		A Guide To Concurrentmap
 
-	Custom Thread Pools In Java 8 Parallel Streams
+		Custom Thread Pools In Java 8 Parallel Streams
 
-	Guide To The Concurrentskiplistmap
+		Guide To The Concurrentskiplistmap
 
-	Guide To Completablefuture
+		Guide To Completablefuture
 
-	Guide To Countdownlatch In Java
+		Guide To Countdownlatch In Java
 
-	Semaphores In Java
+		Semaphores In Java
 
 
 
@@ -767,19 +766,19 @@
 	Memory Management 
 	—————————————————
 
-	Guide To The Most Important Jvm Parameters
+		Guide To The Most Important Jvm Parameters
 
-	Memory Management In Java Interview Questions (+answers)
+		Memory Management In Java Interview Questions (+answers)
 
-	Jvm Garbage Collectors
+		Jvm Garbage Collectors
 
-	Guide To Java String Pool
+		Guide To Java String Pool
 
-	How To Warm Up The Jvm
+		How To Warm Up The Jvm
 
-	Daemon Threads In Java
+		Daemon Threads In Java
 
-	How Memory Leaks Happen In A Java Application - Stackify.com
+		How Memory Leaks Happen In A Java Application - Stackify.com
 
 
 
@@ -788,25 +787,26 @@
 	Design Patterns 
 	———————————————
 
-	Introduction To Creational Design Patterns
+		Introduction To Creational Design Patterns
 
-	Proxy, Decorator, Adapter And Bridge Patterns
+		Proxy, Decorator, Adapter And Bridge Patterns
 
-	Strategy Design Pattern In Java 8
+		Strategy Design Pattern In Java 8
 
-	The Observer Pattern In Java
+		The Observer Pattern In Java
 
-	A Guide To The Front Controller Pattern In Java
+		A Guide To The Front Controller Pattern In Java
 
-	Flyweight Pattern In Java
+		Flyweight Pattern In Java
 
-	Integration Patterns With Apache Camel
+		Integration Patterns With Apache Camel
 
 
 
 	High-performance Computing 
 	——————————————————————————
-	Introduction To Ratpack
+	
+		Introduction To Ratpack
 
 
 
@@ -825,28 +825,28 @@
 	Core Persistence - I
 	————————————————————
 
-	Hibernate 3 With Spring
+		Hibernate 3 With Spring
 
-	Hibernate 4 With Spring
+		Hibernate 4 With Spring
 
-	Jpa With Spring
+		Jpa With Spring
 
-	Persistence With Spring Data Jpa
+		Persistence With Spring Data JPA
 
 
 
 	The Dao - Ii
 	————————————
 
-	The Dao With Spring And Hibernate
+		The DAO With Spring And Hibernate
 
-	The Dao With Jpa And Spring
+		The Dao With Jpa And Spring
 
-	Simplify The Dao With Spring And Java Generics
+		Simplify The Dao With Spring And Java Generics
 
 
 
-	Advanced Persistence - Iii
+	Advanced Persistence - III
 	——————————————————————————
 
 	Transaction Configuration With Spring 4 And Jpa
@@ -875,7 +875,7 @@
 
 
 
-	Spring Data Mongodb - Iv
+	Spring Data Mongodb - IV
 	————————————————————————
 
 	Introduction To Spring Data Mongodb
@@ -980,7 +980,7 @@
 
 
 
-	Jpa
+	JPA
 	———
 
 	Rest Query Language With Spring Data Jpa And Querydsl

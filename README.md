@@ -538,11 +538,19 @@
 	Martin Fowler 
 	—————————————
 
+		CQRS (Command Query Responsibility Segregation) - Martin Fowler
+
+		Focusing on Events - Martin Fowler
+
+		Event Sourcing - Martin Fowler
+
+		Event Collaboration - Martin Fowler
+
+		Parallel Model - Martin Fowler
 
 		Event Sourcing, Event Architectures - Martin Fowler 
 
-		The Lmax Architecture, Event Sourcing, Event Architectures - Martin Fowler 
-
+		The LMAX Architecture, Event Sourcing, Event Architectures - Martin Fowler 
 
 
 
@@ -564,9 +572,9 @@
 
 		An Operations Model For Micro-services
 
-		Building Micro-services With Spring Cloud And Netflix Oss, Part 1
+		Building Micro-services With Spring Cloud And Netflix OSS - I
 
-		Building Micro-services With Spring Cloud And Netflix Oss, Part 2
+		Building Micro-services With Spring Cloud And Netflix OSS - II
 
 		Building Micro-services, Part 3. Secure Api's With Oauth 2.0
 
@@ -614,17 +622,17 @@
 	AWS Lamda 
 	—————————
 
-		Aws S3 With Java
+		AWS S3 With Java
 
-		Aws Lambda With Java
+		AWS Lambda With Java
 
-		Aws Lambda Using Dynamodb With Java
+		AWS Lambda Using Dynamodb With Java
 
-		Spring Cloud Aws – S3
+		Spring Cloud AWS – S3
 
 		Using Aws Lambda With Api Gateway
 
-		Spring Cloud Aws – Ec2
+		Spring Cloud AWS – Ec2
 
 		Introduction To Aws Serverless Application Model
 
@@ -645,8 +653,6 @@
 
 
 	Scheduling In Spring With Quartz
-
-
 
 
 

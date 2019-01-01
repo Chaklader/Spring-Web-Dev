@@ -566,7 +566,7 @@
 
 
 
-	Micro-services Serices Spring Cloud And Netflix Oss - Callistaenterprise.se
+	Micro-services Serices Spring Cloud And Netflix OSS - Callistaenterprise.se
 	———————————————————————————————————————————————————————————————————————————
 
 
@@ -700,10 +700,10 @@
 
 
 
-	Test And Consume The Api - Iii
+	Test And Consume The API - III
 	——————————————————————————————
 
-		Test A Rest Api With Java
+		Test A Rest API With Java
 
 		Testing Rest With Multiple Mime Types
 
@@ -813,8 +813,6 @@
 	——————————————————————————
 	
 		Introduction To Ratpack
-
-
 
 
 
@@ -972,17 +970,17 @@
 	Building A Rest Query Language Series 
 	—————————————————————————————————————
 
-	Rest Query Language With Spring And Jpa Criteria
+		Rest Query Language With Spring And Jpa Criteria
 
-	Rest Query Language With Spring Data Jpa Specifications
+		Rest Query Language With Spring Data Jpa Specifications
 
-	Rest Query Language With Spring Data Jpa And Querydsl
+		Rest Query Language With Spring Data Jpa And Querydsl
 
-	Rest Query Language – Advanced Search Operations
+		Rest Query Language – Advanced Search Operations
 
-	Rest Query Language With Rsql
+		Rest Query Language With Rsql
 
-	Rest Query Language With Querydsl Web Support
+		Rest Query Language With Querydsl Web Support
 
 
 
@@ -1133,7 +1131,7 @@
 
 
 
-	Ldap 
+	LDAP 
 	————
 
 	Intro To Spring Security Ldap
@@ -1340,18 +1338,18 @@
 	——————————————————————————————————————
 
 
-	Spring Security Exceptions - Iii
+	Spring Security Exceptions - III
 	————————————————————————————————
 
-	No Bean Named ‘springsecurityfilterchain’ Is Defined
+		No Bean Named ‘springsecurityfilterchain’ Is Defined
 
-	No Bean Named ‘springsecurityfilterchain‘ Is Defined – The Problem, The Causes And The Solutions.
-
-
+		No Bean Named ‘springsecurityfilterchain‘ Is Defined – The Problem, The Causes And The Solutions.
 
 
 
-	Httpclient 4
+
+
+	HttpClient 4
 	————————————
 
 	Httpclient 4 Tutorial
@@ -1796,7 +1794,7 @@
 
 
 
-	Rabbitmq
+	RabbitMQ
 	————————
 
 	Introduction To Rabbitmq
@@ -2751,18 +2749,9 @@
 	———————————————————————————————————————
 
 
+		
+		
 
+		
 
-
-	Books 
-	—————
-
-
-	High-performance Java Persistence - Vlad Mihalcea
-
-	Restful Java With Jax-rs 2.0  - O’reilly (Designing Distributed Web Services)
-
-	Rest Assured With Jax-rs - Git-book
-
-	High Performance Java Persistence - Vlad Mihalcea
 

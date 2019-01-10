@@ -77,39 +77,7 @@
 
 
 
-	Event Sourcing, Distributed Systems & Cqrs
-	———————————————————————————————————————————
-
-
-		Intro - Event Sourcing, Distributed Systems & Cqrs - Sebastian Daschner/ Youtube 
-
-		Shortcomings Of Crud - Event Sourcing, Distributed Systems & Cqrs - Sebastian Daschner/ Youtube 
-
-		The Eventually Consistent Real-world - Event Sourcing, Distributed Systems & Cqrs - Sebastian Daschner/ Youtube 
-
-		Event Sourcing - Event Sourcing, Distributed Systems & Cqrs - Sebastian Daschner/ Youtube 
-
-		Benefits Of Event Sourced Architectures - Event Sourcing, Distributed Systems & Cqrs - Sebastian Daschner/ Youtube 
-
-		Introduction To Event-driven Architectures - Event Sourcing, Distributed Systems & Cqrs - Sebastian Daschner/ Youtube 
-
-		Introduction To Cqrs - Event Sourcing, Distributed Systems & Cqrs - Sebastian Daschner/ Youtube 
-
-		How To Build An Event Store - Event Sourcing, Distributed Systems & Cqrs - Sebastian Daschner/ Youtube 
-
-		Scalable, Event-driven Coffee Shop - Event Sourcing, Distributed Systems & Cqrs - Sebastian Daschner/ Youtube 
-
-		Implementation In Java Ee - Event Sourcing, Distributed Systems & Cqrs - Sebastian Daschner/ Youtube 
-
-		Using Kafka With Java - Event Sourcing, Distributed Systems & Cqrs - Sebastian Daschner/ Youtube 
-
-		Running The Scalable Coffee Shop - Event Sourcing, Distributed Systems & Cqrs - Sebastian Daschner/ Youtube 
-
-		Outro - Event Sourcing, Distributed Systems & Cqrs - Sebastian Daschner/ Youtube 
-
-
-
-
+	
 
 
 
